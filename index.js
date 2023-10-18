@@ -6,11 +6,14 @@ const authRoute = require("./routes/auth")
 const userRoute = require("./routes/users")
 const postRoute = require("./routes/posts")
 const categoryRoute = require("./routes/categories")
+const cors = require("cors")
 const multer = require("multer")
 const path = require("path")
 
 
 dotenv.config();
+
+app.use(cors())
 app.use(express.json());
 app.use("/images", express.static(path.join(__dirname,"/images")))
 
